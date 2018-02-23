@@ -1,9 +1,13 @@
+import Login from './Login';
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 function Body() {
   return (
     <div>
-      <h1>Body works!</h1>
+      <Switch>
+        <Route exact path='/' component={Login} />
+      </Switch>
     </div>
   );
 }
