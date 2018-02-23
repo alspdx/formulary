@@ -1,3 +1,4 @@
+import ClientList from './ClientList';
 import Login from './Login';
 import React from 'react';
 import UserProfile from './UserProfile';
@@ -7,8 +8,9 @@ function Body() {
   return (
     <div>
       <Switch>
-        <Route path='/user' component={UserProfile} />
         <Route exact path='/' component={Login} />
+        <Route path='/clients' component={ClientList} />
+        <Route path='/user' component={UserProfile} />
       </Switch>
     </div>
   );
