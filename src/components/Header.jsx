@@ -1,8 +1,12 @@
 import React from 'react';
+import UserHeading from './UserHeading';
 
 function Header() {
   return (
-    <h1>Header works!</h1>
+    <div>
+      <h1>Header works!</h1>
+      <UserHeading />
+    </div>
   );
 }
 
