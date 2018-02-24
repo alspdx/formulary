@@ -9,6 +9,12 @@ import { Switch, Route } from 'react-router-dom';
 function Body() {
   return (
     <div>
+      <style jsx>{`
+        h1 {
+          color: var(--primary-color);
+        }
+
+              `}</style>
       <h1>Body works!</h1>
       <Switch>
         <Route exact path='/' component={Login} />
