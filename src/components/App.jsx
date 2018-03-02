@@ -1,9 +1,13 @@
 import Body from './Body';
 import Header from './Header';
 import React from 'react';
+import glamorous from 'glamorous';
+import { reset } from 'glamor/reset';
+
+const ResetDiv = glamorous.div({reset});
 
 const App =() => (
-  <div>
+  <ResetDiv>
     <style jsx global>{`
       :root {
         --primary: #ff6375;
@@ -15,7 +19,7 @@ const App =() => (
     `}</style>
     <Header />
     <Body />
-  </div>
+  </ResetDiv>
 )
 
 

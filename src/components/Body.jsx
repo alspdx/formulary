@@ -6,35 +6,10 @@ import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
 import glamorous from 'glamorous';
-
-const MyStyledDiv = glamorous.li({
-    fontSize: '2em',
-    color: 'red',
-  },
-  {
-    color: 'green',
-    ':hover': {
-      color: 'yellow'
-    }
-  },
-  (props) => ({
-    fontSize: props.size === 'big' ? 30 : 10,
-  })
-);
-
-const { Span } = glamorous;
+import { reset } from 'glamor/reset';
 
 const Body = () => (
   <div>
-    <MyStyledDiv size='big'>Body works!</MyStyledDiv>
-    <Span
-      color='blue'
-      css={{
-        ':hover': {
-          color: 'red',
-        }
-      }}
-    >This is the Span</Span>
     <Switch>
       <Route exact path='/' component={Login} />
       <Route path='/clients' component={DetailsList} />
