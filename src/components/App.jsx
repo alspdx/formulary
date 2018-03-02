@@ -7,14 +7,13 @@ function App() {
     <div>
       <style jsx global>{`
         :root {
-          --primary-color: #ff6375;
-          --secondary-color: #78e2d8;
-          --tertiary-color: #daffef;
-          --light-color: #f9f9f9;
-          --dark-color: #3d3d3d;
+          --primary: #ff6375;
+          --secondary: #78e2d8;
+          --tertiary: #daffef;
+          --white: #f9f9f9;
+          --black: #3d3d3d;
         }
       `}</style>
-      <h1>App works!</h1>
       <Header />
       <Body />
     </div>

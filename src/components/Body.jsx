@@ -11,10 +11,10 @@ function Body() {
     <div>
       <style jsx>{`
         h1 {
-          color: var(--primary-color);
+          color: var(--primary);
         }
 
-              `}</style>
+      `}</style>
       <h1>Body works!</h1>
       <Switch>
         <Route exact path='/' component={Login} />
