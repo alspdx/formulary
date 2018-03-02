@@ -9,7 +9,7 @@ const ResetDiv = glamorous.div({
   }
 );
 
-const App =() => (
+const App = () => (
   <ResetDiv>
     <Header />
     <Body />
