@@ -5,20 +5,21 @@ import glamorous from 'glamorous';
 import colors from './../constants';
 
 const StyledHeader = glamorous.header({
-    backgroundColor: colors.primary,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '20px',
-    height: '50px',
-  }
+  backgroundColor: colors.primary,
+  boxSizing: 'border-box',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '20px',
+  height: '70px',
+}
 );
 
 const Header = () => (
   <StyledHeader>
-    <UserHeading userName='alspdx'/>
+    <UserHeading userName='alspdx' />
     <Nav />
   </StyledHeader>
-)
+);
 
 export default Header;

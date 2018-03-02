@@ -7,15 +7,13 @@ import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
 
 const Body = () => (
-  <div>
-    <Switch>
-      <Route exact path='/' component={Login} />
-      <Route path='/clients' component={DetailsList} />
-      <Route path='/clientdetails' component={ClientDetails} />
-      <Route path='/user' component={UserProfile} />
-      <Route component={Error404} />
-    </Switch>
-  </div>
+  <Switch>
+    <Route exact path='/' component={Login} />
+    <Route path='/clients' component={DetailsList} />
+    <Route path='/clientdetails' component={ClientDetails} />
+    <Route path='/user' component={UserProfile} />
+    <Route component={Error404} />
+  </Switch>
 );
 
 export default Body;
