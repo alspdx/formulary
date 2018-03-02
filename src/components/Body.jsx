@@ -5,6 +5,19 @@ import Login from './Login';
 import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
+import glamorous from 'glamorous';
+
+const MyStyledDiv = glamorous.section({
+  fontSize: '2em',
+  color: 'red'
+  },
+  {
+    color: 'green',
+  },
+  (props) => ({
+    fontSize: props.size === 'big' ? 30 : 10,
+  })
+);
 
 const Body = () => (
   <div>
@@ -14,7 +27,7 @@ const Body = () => (
       }
 
     `}</style>
-    <h1>Body works!</h1>
+  <MyStyledDiv size='big'>Body works!</MyStyledDiv>
     <Switch>
       <Route exact path='/' component={Login} />
       <Route path='/clients' component={DetailsList} />
