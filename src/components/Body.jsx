@@ -7,12 +7,15 @@ import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
 import glamorous from 'glamorous';
 
-const MyStyledDiv = glamorous.section({
-  fontSize: '2em',
-  color: 'red'
+const MyStyledDiv = glamorous.li({
+    fontSize: '2em',
+    color: 'red',
   },
   {
     color: 'green',
+    ':hover': {
+      color: 'yellow'
+    }
   },
   (props) => ({
     fontSize: props.size === 'big' ? 30 : 10,
@@ -23,21 +26,15 @@ const { Span } = glamorous;
 
 const Body = () => (
   <div>
-    <style jsx>{`
-      h1 {
-        color: var(--primary);
-      }
-
-    `}</style>
-  <MyStyledDiv size='big'>Body works!</MyStyledDiv>
-  <Span
-    color='blue'
-    css={{
-      ':hover': {
-        color: 'red',
-      }
-    }}
-  >This is the Span</Span>
+    <MyStyledDiv size='big'>Body works!</MyStyledDiv>
+    <Span
+      color='blue'
+      css={{
+        ':hover': {
+          color: 'red',
+        }
+      }}
+    >This is the Span</Span>
     <Switch>
       <Route exact path='/' component={Login} />
       <Route path='/clients' component={DetailsList} />
@@ -47,6 +44,5 @@ const Body = () => (
     </Switch>
   </div>
 )
-
 
 export default Body;

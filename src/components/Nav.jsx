@@ -1,11 +1,20 @@
 import React from 'react';
 import NavItem from './NavItem';
+import glamorous from 'glamorous';
+import { css, nthChild } from 'glamor';
+
+const StyledNav = glamorous.ul({
+    display: 'flex',
+    listStyle: 'none',
+  }
+);
 
 const Nav = () => (
-  <div>
-    <h1>Nav works!</h1>
+  <StyledNav>
     <NavItem />
-  </div>
+    <NavItem />
+    <NavItem />
+  </StyledNav>
 )
 
 export default Nav;
