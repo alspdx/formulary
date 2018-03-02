@@ -6,25 +6,24 @@ import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
 
-function Body() {
-  return (
-    <div>
-      <style jsx>{`
-        h1 {
-          color: var(--primary);
-        }
+const Body = () => (
+  <div>
+    <style jsx>{`
+      h1 {
+        color: var(--primary);
+      }
 
-      `}</style>
-      <h1>Body works!</h1>
-      <Switch>
-        <Route exact path='/' component={Login} />
-        <Route path='/clients' component={DetailsList} />
-        <Route path='/clientdetails' component={ClientDetails} />
-        <Route path='/user' component={UserProfile} />
-        <Route component={Error404} />
-      </Switch>
-    </div>
-  );
-}
+    `}</style>
+    <h1>Body works!</h1>
+    <Switch>
+      <Route exact path='/' component={Login} />
+      <Route path='/clients' component={DetailsList} />
+      <Route path='/clientdetails' component={ClientDetails} />
+      <Route path='/user' component={UserProfile} />
+      <Route component={Error404} />
+    </Switch>
+  </div>
+)
+
 
 export default Body;
