@@ -16,7 +16,7 @@ const StyledHeader = glamorous.header({
 
 const Header = () => (
   <StyledHeader>
-    <UserHeading />
+    <UserHeading userName='My UserName'/>
     <Nav />
   </StyledHeader>
 )
