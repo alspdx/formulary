@@ -3,10 +3,9 @@ import NavItem from './NavItem';
 import glamorous from 'glamorous';
 
 const StyledNav = glamorous.ul({
-    display: 'flex',
-    listStyle: 'none',
-  },
-);
+  display: 'flex',
+  listStyle: 'none',
+});
 
 const navItems = [
   {
@@ -21,7 +20,7 @@ const navItems = [
     title: 'Client Details',
     pathName: '/clientdetails'
   }
-]
+];
 
 const Nav = () => (
   <StyledNav>
@@ -29,6 +28,6 @@ const Nav = () => (
       <NavItem key={item.title} title={item.title} pathName={item.pathName} />
     )}
   </StyledNav>
-)
+);
 
 export default Nav;

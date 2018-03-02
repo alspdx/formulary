@@ -4,17 +4,19 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { reset } from 'glamor/reset';
 
+
+
 const ResetDiv = glamorous.div({
-    reset
-  }
-);
+  reset,
+  height: '100vh'
+});
 
 const App = () => (
   <ResetDiv>
     <Header />
     <Body />
   </ResetDiv>
-)
+);
 
 
 export default App;

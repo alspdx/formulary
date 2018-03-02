@@ -10,13 +10,13 @@ const StyledHeader = glamorous.header({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '20px',
-    height: '70px',
+    height: '50px',
   }
 );
 
 const Header = () => (
   <StyledHeader>
-    <UserHeading userName='My UserName'/>
+    <UserHeading userName='alspdx'/>
     <Nav />
   </StyledHeader>
 )

@@ -5,8 +5,6 @@ import Login from './Login';
 import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
-import glamorous from 'glamorous';
-import { reset } from 'glamor/reset';
 
 const Body = () => (
   <div>
@@ -18,6 +16,6 @@ const Body = () => (
       <Route component={Error404} />
     </Switch>
   </div>
-)
+);
 
 export default Body;

@@ -9,10 +9,10 @@ const StyledH1 = glamorous.h1({
 
 const UserHeading = ({userName}) => (
   <StyledH1>{userName}</StyledH1>
-)
+);
 
 UserHeading.propTypes = {
   userName: PropTypes.string
-}
+};
 
 export default UserHeading;

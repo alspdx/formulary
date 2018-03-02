@@ -6,7 +6,7 @@ const ClientDetails = () => (
     <h1>ClientDetails works!</h1>
     <DetailsList />
   </div>
-)
+);
 
 
 export default ClientDetails;
