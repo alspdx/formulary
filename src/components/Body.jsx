@@ -19,6 +19,8 @@ const MyStyledDiv = glamorous.section({
   })
 );
 
+const { Span } = glamorous;
+
 const Body = () => (
   <div>
     <style jsx>{`
@@ -28,6 +30,14 @@ const Body = () => (
 
     `}</style>
   <MyStyledDiv size='big'>Body works!</MyStyledDiv>
+  <Span
+    color='blue'
+    css={{
+      ':hover': {
+        color: 'red',
+      }
+    }}
+  >This is the Span</Span>
     <Switch>
       <Route exact path='/' component={Login} />
       <Route path='/clients' component={DetailsList} />
