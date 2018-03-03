@@ -5,15 +5,28 @@ import Login from './Login';
 import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
+import glamorous from 'glamorous';
+import colors from './../constants';
+
+const Container = glamorous.div({
+  boxSizing: 'border-box',
+  height: 'calc(100% - 70px)',
+  backgroundColor: colors.primary,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+});
 
 const Body = () => (
-  <Switch>
-    <Route exact path='/' component={Login} />
-    <Route path='/clients' component={DetailsList} />
-    <Route path='/clientdetails' component={ClientDetails} />
-    <Route path='/user' component={UserProfile} />
-    <Route component={Error404} />
-  </Switch>
+  <Container>
+    <Switch>
+      <Route exact path='/' component={Login} />
+      <Route path='/clients' component={DetailsList} />
+      <Route path='/clientdetails' component={ClientDetails} />
+      <Route path='/user' component={UserProfile} />
+      <Route component={Error404} />
+    </Switch>
+  </Container>
 );
 
 export default Body;

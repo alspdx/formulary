@@ -4,7 +4,7 @@ import colors from './../constants';
 import PropTypes from 'prop-types';
 
 const StyledH1 = glamorous.h1({
-  color: colors.white
+  color: colors.primary
 });
 
 const UserHeading = ({userName}) => (

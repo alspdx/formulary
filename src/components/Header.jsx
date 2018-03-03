@@ -5,7 +5,7 @@ import glamorous from 'glamorous';
 import colors from './../constants';
 
 const StyledHeader = glamorous.header({
-  backgroundColor: colors.primary,
+  backgroundColor: colors.white,
   boxSizing: 'border-box',
   display: 'flex',
   alignItems: 'center',

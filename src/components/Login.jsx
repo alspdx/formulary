@@ -3,22 +3,29 @@ import glamorous from 'glamorous';
 import FormInput from './FormInput';
 import colors from './../constants';
 
-const LoginDiv = glamorous.div({
-  backgroundColor: colors.white,
-  flexDirection: 'column',
+const LoginForm = glamorous.div({
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  height: '440px',
+  width: '660px',
+  backgroundColor: colors.white,
+});
+
+const LoginHeading = glamorous.h2({
+  color: colors.primary
 });
 
 const forms = ['email', 'password'];
 
 const Login = () => (
-  <LoginDiv>
+  <LoginForm>
+    <LoginHeading>Sign In</LoginHeading>
     {forms.map(formType =>
       <FormInput key={formType} formType={formType} />
     )}
-  </LoginDiv>
+  </LoginForm>
 );
 
 export default Login;
