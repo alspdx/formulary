@@ -7,6 +7,7 @@ const StyledInput = glamorous.input({
   backgroundColor: colors,
   height: '50px',
   borderRadius: '10px',
+  width: '400px',
   border: 'none',
   ':nth-child(1n+2)': {
     marginTop: '20px',

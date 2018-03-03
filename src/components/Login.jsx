@@ -1,6 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import FormInput from './FormInput';
+import FormButton from './FormButton';
 import colors from './../constants';
 
 const LoginForm = glamorous.div({
@@ -14,7 +15,8 @@ const LoginForm = glamorous.div({
 });
 
 const LoginHeading = glamorous.h2({
-  color: colors.primary
+  color: colors.primary,
+  margin: 0
 });
 
 const forms = ['email', 'password'];
@@ -25,6 +27,7 @@ const Login = () => (
     {forms.map(formType =>
       <FormInput key={formType} formType={formType} />
     )}
+    <FormButton title='Sign In' />
   </LoginForm>
 );
 
