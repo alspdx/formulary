@@ -10,7 +10,7 @@ const StyledButton = glamorous.button({
   height: '50px',
   width: '400px',
   marginTop: '20px',
-  fontSize: '18px',
+  fontSize: '22px',
   color: colors.white,
   boxShadow: shadows.box1,
   transition: shadows.transition,
@@ -19,12 +19,12 @@ const StyledButton = glamorous.button({
   }
 });
 
-const FormButton = ({title}) => (
-  <StyledButton>{title}</StyledButton>
+const FormButton = ({buttonText}) => (
+  <StyledButton>{buttonText}</StyledButton>
 );
 
 FormButton.propTypes = {
-  title: PropTypes.string
+  buttonText: PropTypes.string
 };
 
 export default FormButton;
