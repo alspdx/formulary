@@ -18,7 +18,7 @@ const InputLabel = glamorous.label({
   fontSize: '18px',
   fontWeight: 'normal',
   position: 'absolute',
-  top: '10px',
+  top: '8px',
   transition: '0.2s ease all',
   pointerEvents: 'none',
   '.labelSmall': {
@@ -35,23 +35,27 @@ const StyledInput = glamorous.input({
   width: '100%',
   border: 'none',
   fontSize: '18px',
-  padding: '8px 0',
+  padding: '8px 0 10px',
   display: 'block',
   ':focus': {
     outline: 'none'
   },
 });
 
-const AnimatedHR = glamorous.hr({
+const StyledHR = glamorous.hr({
   borderLeft: 'none',
   borderRight: 'none',
   borderTop:  'none',
-  borderBottom: `2px solid ${colors.primary}`,
   width: '100%',
-  bottom: '8px',
   boxSizing: 'content-box',
-  margin: '0px',
   position: 'absolute',
+  margin: '0',
+  bottom: '0',
+  borderBottom: '1px solid #e0e0e0',
+});
+
+const AnimatedHR = glamorous(StyledHR)({
+  borderBottom: `3px solid ${colors.primary}`,
   transition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
   '.hrAnimate': {
     transform: 'scaleX(0)',
@@ -90,10 +94,12 @@ class FormInput extends React.Component {
           htmlFor={formType}>
           {formType[0].toUpperCase() + formType.slice(1)}:
         </InputLabel>
-        <AnimatedHR
-          className={this.state.isFocused ? '' : 'hrAnimate'}
-        />
-        <hr />
+        <div>
+          <StyledHR />
+          <AnimatedHR
+            className={this.state.isFocused ? '' : 'hrAnimate'}
+          />
+        </div>
       </InputWrapper>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import constants from './../constants';
-const { colors } = constants;
+const { colors, shadows } = constants;
 
 const StyledButton = glamorous.button({
   border: 'none',
@@ -11,7 +11,12 @@ const StyledButton = glamorous.button({
   width: '400px',
   marginTop: '20px',
   fontSize: '18px',
-  color: colors.white
+  color: colors.white,
+  boxShadow: shadows.box1,
+  transition: shadows.transition,
+  ':hover': {
+    boxShadow: shadows.box3,
+  }
 });
 
 const FormButton = ({title}) => (

@@ -18,7 +18,8 @@ const LoginForm = glamorous.div({
 
 const LoginHeading = glamorous.h2({
   color: colors.primary,
-  margin: 0
+  marginBottom: '20px',
+  marginTop: 0,
 });
 
 const forms = ['email', 'password'];
@@ -26,9 +27,11 @@ const forms = ['email', 'password'];
 const Login = () => (
   <LoginForm>
     <LoginHeading>Sign In</LoginHeading>
-    {forms.map(formType =>
-      <FormInput key={formType} formType={formType} />
-    )}
+    <div>
+      {forms.map(formType =>
+        <FormInput key={formType} formType={formType} />
+      )}
+    </div>
     <FormButton title='Sign In' />
   </LoginForm>
 );

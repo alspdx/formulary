@@ -3,7 +3,7 @@ import UserHeading from './UserHeading';
 import Nav from './Nav';
 import glamorous from 'glamorous';
 import constants from './../constants';
-const { colors } = constants;
+const { colors, shadows } = constants;
 
 const StyledHeader = glamorous.header({
   backgroundColor: colors.white,
@@ -14,7 +14,7 @@ const StyledHeader = glamorous.header({
   justifyContent: 'space-between',
   padding: '20px',
   height: '70px',
-  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+  boxShadow: shadows.box2,
 }
 );
 
