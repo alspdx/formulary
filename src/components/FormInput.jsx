@@ -80,19 +80,19 @@ class FormInput extends React.Component {
   }
 
   render() {
-    const { formType } = this.props;
+    const { inputType, labelText } = this.props;
     return (
       <InputWrapper>
         <StyledInput
-          type={formType}
-          name={formType}
+          type={inputType}
+          name={labelText}
           onFocus={() => this.setState({isFocused: true})}
           onBlur={() => this.setState({isFocused: false})}
           onChange={(event) => this.handleHasValue(event)} />
         <InputLabel
           className={(this.state.hasValue || this.state.isFocused) ? 'labelSmall' : ''}
-          htmlFor={formType}>
-          {formType[0].toUpperCase() + formType.slice(1)}:
+          htmlFor={labelText}>
+          {labelText}:
         </InputLabel>
         <div>
           <StyledHR />
@@ -106,7 +106,8 @@ class FormInput extends React.Component {
 }
 
 FormInput.propTypes = {
-  formType: PropTypes.string
+  inputType: PropTypes.string,
+  labelText: PropTypes.string
 };
 
 export default FormInput;

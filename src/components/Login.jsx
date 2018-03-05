@@ -29,14 +29,23 @@ const SignUpLink = glamorous(Link)({
   marginTop: '10px',
 });
 
-const forms = ['email', 'password'];
+const loginInputs = [
+  {
+    inputType: 'email',
+    labelText: 'Email'
+  },
+  {
+    inputType: 'password',
+    labelText: 'Password'
+  }
+];
 
 const Login = () => (
   <LoginForm>
     <LoginHeading>Sign in</LoginHeading>
     <div>
-      {forms.map(formType =>
-        <FormInput key={formType} formType={formType} />
+      {loginInputs.map(input =>
+        <FormInput key={input.type} inputType={input.inputType} labelText={input.labelText} />
       )}
     </div>
     <FormButton buttonText='Sign In' />
