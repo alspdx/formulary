@@ -6,7 +6,7 @@ import constants from './../constants';
 const { colors, shadows } = constants;
 import { Link } from 'react-router-dom';
 
-const SignUpForm = glamorous.div({
+const RegisterForm = glamorous.div({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -16,14 +16,8 @@ const SignUpForm = glamorous.div({
   boxShadow: shadows.box1,
 });
 
-const SignUpHeading = glamorous.h2({
-  color: colors.primary,
-  marginBottom: '20px',
-  marginTop: 0,
-});
-
 const StyledSpan = glamorous.span({
-  color: colors.black,
+  color: colors.darkGray,
   fontSize: '14px',
   marginTop: '10px'
 });
@@ -33,7 +27,7 @@ const LogInLink = glamorous(Link)({
   textDecoration: 'none',
 });
 
-const signUpInputs = [
+const registerInputs = [
   {
     inputType: 'text',
     labelText: 'Username'
@@ -48,20 +42,19 @@ const signUpInputs = [
   }
 ];
 
-const SignUp = () => (
-  <SignUpForm>
-    <SignUpHeading>Sign up</SignUpHeading>
+const Register = () => (
+  <RegisterForm>
     <div>
-      {signUpInputs.map(input =>
-        <FormInput key={input.type} inputType={input.inputType} labelText={input.labelText} />
+      {registerInputs.map(input =>
+        <FormInput key={input.labelText} inputType={input.inputType} labelText={input.labelText} />
       )}
     </div>
-    <FormButton buttonText='Sign Up' />
+    <FormButton buttonText='Join Formulary!' />
     <StyledSpan>
       Already have an account?
-      <LogInLink to='/'> Log in here!</LogInLink>
+      <LogInLink to='/'> Sign In here!</LogInLink>
     </StyledSpan>
-  </SignUpForm>
+  </RegisterForm>
 );
 
-export default SignUp;
+export default Register;

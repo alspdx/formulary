@@ -1,8 +1,8 @@
 import ClientDetails from './ClientDetails';
 import DetailsList from './DetailsList';
 import Error404 from './Error404';
-import Login from './Login';
-import SignUp from './SignUp';
+import SignIn from './SignIn';
+import Register from './Register';
 import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
@@ -19,8 +19,8 @@ const Container = glamorous.div({
 const Body = () => (
   <Container>
     <Switch>
-      <Route exact path='/' component={Login} />
-      <Route path='/signup' component={SignUp} />
+      <Route exact path='/' component={SignIn} />
+      <Route path='/signup' component={Register} />
       <Route path='/clients' component={DetailsList} />
       <Route path='/clientdetails' component={ClientDetails} />
       <Route path='/user' component={UserProfile} />

@@ -9,7 +9,7 @@ const StyledButton = glamorous.button({
   backgroundColor: colors.primary,
   height: '50px',
   width: '400px',
-  marginTop: '20px',
+  marginTop: '50px',
   fontSize: '22px',
   color: colors.white,
   boxShadow: shadows.box1,
