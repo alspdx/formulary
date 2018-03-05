@@ -2,7 +2,8 @@ import React from 'react';
 import glamorous from 'glamorous';
 import FormInput from './FormInput';
 import FormButton from './FormButton';
-import colors from './../constants';
+import constants from './../constants';
+const { colors, shadows } = constants;
 
 const LoginForm = glamorous.div({
   display: 'flex',
@@ -12,7 +13,7 @@ const LoginForm = glamorous.div({
   height: '440px',
   width: '660px',
   backgroundColor: colors.white,
-  boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+  boxShadow: shadows.box1,
 });
 
 const LoginHeading = glamorous.h2({

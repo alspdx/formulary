@@ -1,8 +1,9 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import colors from './../constants';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import constants from './../constants';
+const { colors } = constants;
 
 const StyledLi = glamorous.li({
   ':nth-child(1n+2)': {

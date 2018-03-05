@@ -1,7 +1,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import colors from './../constants';
 import PropTypes from 'prop-types';
+import constants from './../constants';
+const { colors } = constants;
 
 const InputWrapper = glamorous.div({
   width: '400px',

@@ -6,12 +6,10 @@ import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
 import glamorous from 'glamorous';
-import colors from './../constants';
 
 const Container = glamorous.div({
   boxSizing: 'border-box',
   height: 'calc(100% - 70px)',
-  backgroundColor: colors.primary,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
