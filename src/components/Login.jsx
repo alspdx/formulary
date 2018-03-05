@@ -12,6 +12,7 @@ const LoginForm = glamorous.div({
   height: '440px',
   width: '660px',
   backgroundColor: colors.white,
+  boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
 });
 
 const LoginHeading = glamorous.h2({

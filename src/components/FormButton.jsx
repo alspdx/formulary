@@ -7,9 +7,9 @@ const StyledButton = glamorous.button({
   border: 'none',
   backgroundColor: colors.primary,
   height: '50px',
-  borderRadius: '10px',
   width: '400px',
-  marginTop: '20px'
+  marginTop: '20px',
+  color: colors.black
 });
 
 const FormButton = ({title}) => (
