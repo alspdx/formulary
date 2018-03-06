@@ -9,7 +9,9 @@ const ProfileWrapper = glamorous.div({
   color: colors.black,
   backgroundColor: colors.white,
   padding: variables.cardPadding,
-  boxShadow: shadows.box1
+  boxShadow: shadows.box1,
+  display: 'flex',
+  flexDirection: 'column',
 });
 
 const StyledH2 = glamorous.h2({

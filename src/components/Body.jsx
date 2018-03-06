@@ -64,6 +64,264 @@ class Body extends React.Component {
           645
         ],
       },
+      clientsById: {
+        123: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        23453: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        123121: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        6445: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        324545: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        5674: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        2342: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        },
+        12345: {
+          firstName: 'FirstName',
+          lastName: 'LastName'
+          phoneNumber: '123-456-7890',
+          email: 'email@isp.com',
+          birthday: 'December 25th',
+          clientSince: '05/24/2016'
+          notes: 'This is a client who gets cut and color, referred by Jane Doe.',
+          stylistId: '1',
+          serviceIds: [
+            9456,
+            94523,
+            234354,
+            544532,
+            34567,
+            23454,
+            1245,
+            6755,
+            4567,
+            3456,
+            888,
+            444,
+            5674,
+            2345,
+            123,
+            321,
+            2534,
+            6345,
+            12345666,
+            645
+          ]
+        }
+      },
       formDetails: {
         register: {
           inputs: [
@@ -103,7 +361,7 @@ class Body extends React.Component {
           linkTo: '/register',
           linkText: 'Join Formulary!'
         }
-      }
+      },
     };
   }
 
@@ -122,7 +380,7 @@ class Body extends React.Component {
             )} />
             <Route path='/signin' render={() => <AccountForm formDetails={this.state.formDetails.signIn} />} />
             <Route path='/register' render={() => <AccountForm formDetails={this.state.formDetails.register} />} />
-            <Route path='/clients' component={DetailsList} />
+            <Route path='/clients' render={() => <DetailsList clients={this.state.clientsById}/>} />
             <Route path='/clientdetails' component={ClientDetails} />
             <Route path='/user' render={() => <UserProfile userDetails={this.state.userDetails} />} />
             <Route component={Error404} />

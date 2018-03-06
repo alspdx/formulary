@@ -37,8 +37,8 @@ const Nav = ({ loggedIn, userName }) => (
 );
 
 Nav.propTypes = {
-  loggedIn: PropTypes.string,
-  userName: PropTypes.strings
+  loggedIn: PropTypes.bool,
+  userName: PropTypes.string
 };
 
 export default Nav;
