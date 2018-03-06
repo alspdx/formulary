@@ -1,17 +1,33 @@
 import React from 'react';
 import DetailsLink from './DetailsLink';
 import PropTypes from 'prop-types';
+import glamorous from 'glamorous';
+import constants from './../constants';
+const { colors, shadows, variables } = constants;
+
+const ListHeading = glamorous.h2({
+  color: colors.primary
+});
+
+const ListContainer = glamorous.div({
+  padding: variables.cardPadding,
+  color: colors.black,
+  backgroundColor: colors.white,
+  boxShadow: shadows.box1,
+  boxSizing: 'border-box',
+  maxHeight: '70%',
+  overflow: 'scroll'
+});
 
 const DetailsList = ({ listType, listItems }) => {
-return (
-    <div>
-      <h1>{listType}:</h1>
+  return (
+    <ListContainer>
+      <ListHeading>{listType}:</ListHeading>
       {Object.keys(listItems).map(itemKey => {
-        console.log(itemKey, listItems[itemKey]);
-        return <DetailsLink detailType={listType} item={listItems[itemKey]} />;
+        return <DetailsLink key={itemKey} detailType={listType} item={listItems[itemKey]} />;
       })}
-    </div>
-  )
+    </ListContainer>
+  );
 };
 
 DetailsList.propTypes = {
