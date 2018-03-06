@@ -4,8 +4,10 @@ import Error404 from './Error404';
 import AccountForm from './AccountForm';
 import React from 'react';
 import UserProfile from './UserProfile';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import glamorous from 'glamorous';
+
+const loggedIn = false;
 
 const Container = glamorous.div({
   boxSizing: 'border-box',
@@ -57,7 +59,14 @@ const formDetails = {
 const Body = () => (
   <Container>
     <Switch>
-      <Route exact path='/signin' render={() => <AccountForm formDetails={formDetails.signIn} />} />
+      <Route exact path='/' render={() => (
+        loggedIn ? (
+          <UserProfile />
+        ) : (
+          <Redirect to='/signin' />
+        )
+      )} />
+      <Route path='/signin' render={() => <AccountForm formDetails={formDetails.signIn} />} />
       <Route path='/register' render={() => <AccountForm formDetails={formDetails.register} />} />
       <Route path='/clients' component={DetailsList} />
       <Route path='/clientdetails' component={ClientDetails} />
