@@ -24,7 +24,7 @@ const InputLabel = glamorous.label({
   '.inputActiveOrHasValue': {
     color: colors.primary,
     top: '-20',
-    fontSize: variables.fontSmall
+    fontSize: variables.fontSmall,
   }
 });
 
@@ -38,7 +38,7 @@ const StyledInput = glamorous.input({
   padding: '8px 0 8px',
   display: 'block',
   ':focus': {
-    outline: 'none'
+    outline: 'none',
   },
 });
 
@@ -68,7 +68,7 @@ class FormInput extends React.Component {
     super(props);
     this.state = {
       hasValue: false,
-      isFocused: false
+      isFocused: false,
     };
   }
 

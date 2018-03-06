@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import constants from './../constants';
 const { colors, shadows, variables } = constants;
+import { Link } from 'react-router-dom';
 
 const StyledButton = glamorous.button({
   border: 'none',
@@ -25,12 +26,13 @@ const StyledButton = glamorous.button({
   },
 });
 
-const FormButton = ({buttonText}) => (
-  <StyledButton>{buttonText}</StyledButton>
+const FormButton = ({ buttonText, buttonPath }) => (
+  <Link to={buttonPath}><StyledButton>{buttonText}</StyledButton></Link>
 );
 
 FormButton.propTypes = {
-  buttonText: PropTypes.string
+  buttonText: PropTypes.string,
+  buttonPath: PropTypes.string
 };
 
 export default FormButton;

@@ -7,7 +7,7 @@ const { variables } = constants;
 const ImageWrapper = glamorous.div({
   height: '100%',
   top: variables.logoTopPosition,
-  position: 'relative'
+  position: 'relative',
 });
 
 const Logo = glamorous.img({

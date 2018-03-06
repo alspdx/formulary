@@ -12,7 +12,7 @@ const FormWrapper = glamorous.div({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: variables.formPadding,
+  padding: variables.cardPadding,
   backgroundColor: colors.white,
   boxShadow: shadows.box1,
 });
@@ -29,7 +29,7 @@ const StyledLink = glamorous(Link)({
 });
 
 const AccountForm = ({ formDetails }) => {
-  const { inputs, buttonText, question, linkTo, linkText } = formDetails;
+  const { inputs, buttonText, buttonPath, question, linkTo, linkText } = formDetails;
   return(
     <FormWrapper>
       <div>
@@ -37,7 +37,7 @@ const AccountForm = ({ formDetails }) => {
           <FormInput key={input.labelText} inputType={input.inputType} labelText={input.labelText} />
         )}
       </div>
-      <FormButton buttonText={buttonText} />
+      <FormButton buttonText={buttonText} buttonPath={buttonPath} />
       <StyledSpan>
         {question}
         <StyledLink to={linkTo}>{linkText}</StyledLink>
