@@ -67,11 +67,11 @@ class Body extends React.Component {
       clientsById: {
         123: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -99,11 +99,11 @@ class Body extends React.Component {
         },
         23453: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -131,11 +131,11 @@ class Body extends React.Component {
         },
         123121: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -163,11 +163,11 @@ class Body extends React.Component {
         },
         6445: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -195,11 +195,11 @@ class Body extends React.Component {
         },
         324545: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -227,11 +227,11 @@ class Body extends React.Component {
         },
         5674: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -259,11 +259,11 @@ class Body extends React.Component {
         },
         2342: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -291,11 +291,11 @@ class Body extends React.Component {
         },
         12345: {
           firstName: 'FirstName',
-          lastName: 'LastName'
+          lastName: 'LastName',
           phoneNumber: '123-456-7890',
           email: 'email@isp.com',
           birthday: 'December 25th',
-          clientSince: '05/24/2016'
+          clientSince: '05/24/2016',
           notes: 'This is a client who gets cut and color, referred by Jane Doe.',
           stylistId: '1',
           serviceIds: [
@@ -380,7 +380,7 @@ class Body extends React.Component {
             )} />
             <Route path='/signin' render={() => <AccountForm formDetails={this.state.formDetails.signIn} />} />
             <Route path='/register' render={() => <AccountForm formDetails={this.state.formDetails.register} />} />
-            <Route path='/clients' render={() => <DetailsList clients={this.state.clientsById}/>} />
+            <Route path='/clients' render={() => <DetailsList listType='Clients' listItems={this.state.clientsById} />} />
             <Route path='/clientdetails' component={ClientDetails} />
             <Route path='/user' render={() => <UserProfile userDetails={this.state.userDetails} />} />
             <Route component={Error404} />
