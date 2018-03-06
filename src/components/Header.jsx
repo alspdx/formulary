@@ -20,7 +20,6 @@ const StyledHeader = glamorous.header({
 
 const Header = () => (
   <StyledHeader>
-    <UserHeading userName='alspdx' />
     <Nav />
   </StyledHeader>
 );
