@@ -3,11 +3,11 @@ import glamorous from 'glamorous';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import constants from './../constants';
-const { colors } = constants;
+const { colors, variables } = constants;
 
 const StyledLi = glamorous.li({
   ':nth-child(1n+2)': {
-    marginLeft: '16px',
+    marginLeft: variables.liMargin,
   }
 });
 

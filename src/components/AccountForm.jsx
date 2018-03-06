@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import FormInput from './FormInput';
 import FormButton from './FormButton';
 import constants from './../constants';
-const { colors, shadows } = constants;
+const { colors, shadows, variables } = constants;
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -12,14 +12,14 @@ const FormWrapper = glamorous.div({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '60px 100px',
+  padding: variables.formPadding,
   backgroundColor: colors.white,
   boxShadow: shadows.box1,
 });
 
 const StyledSpan = glamorous.span({
   color: colors.darkGray,
-  fontSize: '14px',
+  fontSize: variables.fontSmall,
   marginTop: '10px'
 });
 

@@ -2,29 +2,29 @@ import React from 'react';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import constants from './../constants';
-const { colors } = constants;
+const { colors, variables } = constants;
 
 const InputWrapper = glamorous.div({
-  width: '400px',
+  width: variables.inputWidth,
   position: 'relative',
   ':nth-child(1n+2)': {
-    marginTop: '50px',
+    marginTop: variables.inputMarginTop,
   }
 });
 
 const InputLabel = glamorous.label({
   width: '100%',
   color: colors.darkGray,
-  fontSize: '18px',
+  fontSize: variables.fontMedium,
   fontWeight: 'normal',
   position: 'absolute',
   top: '8px',
-  transition: '0.2s ease all',
+  transition: variables.inputLabelTransition,
   pointerEvents: 'none',
   '.inputActiveOrHasValue': {
     color: colors.primary,
     top: '-20',
-    fontSize: '14px'
+    fontSize: variables.fontSmall
   }
 });
 
@@ -34,8 +34,8 @@ const StyledInput = glamorous.input({
   boxSizing: 'border-box',
   width: '100%',
   border: 'none',
-  fontSize: '18px',
-  padding: '8px 0 10px',
+  fontSize: variables.fontMedium,
+  padding: '8px 0 8px',
   display: 'block',
   ':focus': {
     outline: 'none'
@@ -56,9 +56,10 @@ const StyledHR = glamorous.hr({
 
 const AnimatedHR = glamorous(StyledHR)({
   borderBottom: `3px solid ${colors.primary}`,
-  transition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
+  transition: variables.inputHRTransition,
+  transform: 'scaleX(0)',
   '.inputFocused': {
-    transform: 'scaleX(0)',
+    transform: 'scaleX(1)',
   }
 });
 
@@ -97,7 +98,7 @@ class FormInput extends React.Component {
         <div>
           <StyledHR />
           <AnimatedHR
-            className={this.state.isFocused ? '' : 'inputFocused'}
+            className={this.state.isFocused ? 'inputFocused' : ''}
           />
         </div>
       </InputWrapper>
