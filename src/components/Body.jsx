@@ -11,7 +11,7 @@ const loggedIn = false;
 
 const Container = glamorous.div({
   boxSizing: 'border-box',
-  height: 'calc(100% - 70px)',
+  height: '100%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'

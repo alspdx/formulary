@@ -13,7 +13,7 @@ const StyledLi = glamorous.li({
 
 const StyledLink = glamorous(Link)({
   textDecoration: 'none',
-  color: colors.primary
+  color: colors.white
 });
 
 const NavItem = ({ title, pathName }) => (

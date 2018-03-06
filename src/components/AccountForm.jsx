@@ -12,7 +12,7 @@ const FormWrapper = glamorous.div({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '80px 120px',
+  padding: '60px 100px',
   backgroundColor: colors.white,
   boxShadow: shadows.box1,
 });

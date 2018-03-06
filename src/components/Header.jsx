@@ -3,18 +3,18 @@ import Nav from './Nav';
 import HeaderLogo from './HeaderLogo';
 import glamorous from 'glamorous';
 import constants from './../constants';
-const { colors, shadows } = constants;
+const { colors } = constants;
 
 const StyledHeader = glamorous.header({
-  backgroundColor: colors.white,
+  backgroundColor: colors.primary,
   width: '100%',
   boxSizing: 'border-box',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '20px',
-  height: '70px',
-  boxShadow: shadows.box2,
+  padding: '10px 60px',
+  height: '100px',
+  // boxShadow: shadows.box2,
 }
 );
 

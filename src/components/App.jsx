@@ -11,6 +11,8 @@ const ResetDiv = glamorous.div({
   boxSizing: 'border-box',
   height: '100vh',
   backgroundColor: colors.primary,
+  display: 'flex',
+  flexDirection: 'column'
 });
 
 const App = () => (
