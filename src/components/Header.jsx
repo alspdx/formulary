@@ -1,6 +1,6 @@
 import React from 'react';
-import UserHeading from './UserHeading';
 import Nav from './Nav';
+import HeaderLogo from './HeaderLogo';
 import glamorous from 'glamorous';
 import constants from './../constants';
 const { colors, shadows } = constants;
@@ -20,6 +20,7 @@ const StyledHeader = glamorous.header({
 
 const Header = () => (
   <StyledHeader>
+    <HeaderLogo />
     <Nav />
   </StyledHeader>
 );
