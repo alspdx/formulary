@@ -29,7 +29,6 @@ const StyledButton = glamorous.button({
 const FormButton = ({ buttonText, buttonPath }) => (
   <Link to={buttonPath}><StyledButton>{buttonText}</StyledButton></Link>
 );
-
 FormButton.propTypes = {
   buttonText: PropTypes.string,
   buttonPath: PropTypes.string

@@ -26,7 +26,7 @@ const Header = ({ loggedIn, userName }) => (
 );
 
 Header.propTypes = {
-  loggedIn: PropTypes.string,
+  loggedIn: PropTypes.bool,
   userName: PropTypes.string
 };
 

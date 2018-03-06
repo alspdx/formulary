@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import constants from './../constants';
+import FormButton from './FormButton';
 const { colors, variables, shadows } = constants;
 
 const ProfileWrapper = glamorous.div({
@@ -20,11 +21,12 @@ const StyledSpan = glamorous.span({
 });
 
 const UserProfile = ({ userDetails }) => {
-  const { userName, email } = userDetails;
+  const { userName, email, clientIds } = userDetails;
   return (
     <ProfileWrapper>
       <StyledH2>{userName}</StyledH2>
       <StyledSpan>{email}</StyledSpan>
+      <FormButton buttonText={`Clients (${clientIds.length})`} buttonPath='/clients' />
     </ProfileWrapper>
   );
 };

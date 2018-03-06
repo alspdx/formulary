@@ -30,7 +30,39 @@ class Body extends React.Component {
       loggedIn: false,
       userDetails: {
         userName: 'Adam Smith',
-        email: 'alspdx@gmail.com'
+        email: 'alspdx@gmail.com',
+        clientIds: [
+          123,
+          23453,
+          123121,
+          6445,
+          324545,
+          5674,
+          2342,
+          12345
+        ],
+        serviceIds: [
+          9456,
+          94523,
+          234354,
+          544532,
+          34567,
+          23454,
+          1245,
+          6755,
+          4567,
+          3456,
+          888,
+          444,
+          5674,
+          2345,
+          123,
+          321,
+          2534,
+          6345,
+          12345666,
+          645
+        ],
       },
       formDetails: {
         register: {
