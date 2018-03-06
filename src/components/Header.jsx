@@ -2,8 +2,10 @@ import React from 'react';
 import Nav from './Nav';
 import HeaderLogo from './HeaderLogo';
 import glamorous from 'glamorous';
+import PropTypes from 'prop-types';
 import constants from './../constants';
 const { variables } = constants;
+
 
 const StyledHeader = glamorous.header({
   width: '100%',
@@ -16,11 +18,16 @@ const StyledHeader = glamorous.header({
 }
 );
 
-const Header = () => (
+const Header = ({ loggedIn, userName }) => (
   <StyledHeader>
     <HeaderLogo />
-    <Nav />
+    <Nav loggedIn={loggedIn} userName={userName} />
   </StyledHeader>
 );
+
+Header.propTypes = {
+  loggedIn: PropTypes.string,
+  userName: PropTypes.string
+};
 
 export default Header;

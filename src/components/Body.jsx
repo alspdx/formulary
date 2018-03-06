@@ -6,10 +6,16 @@ import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import glamorous from 'glamorous';
-
-const loggedIn = false;
+import Header from './Header';
 
 const Container = glamorous.div({
+  boxSizing: 'border-box',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const SwitchWrap = glamorous.div({
   boxSizing: 'border-box',
   height: '100%',
   display: 'flex',
@@ -17,63 +23,81 @@ const Container = glamorous.div({
   justifyContent: 'center'
 });
 
-const formDetails = {
-  register: {
-    inputs: [
-      {
-        inputType: 'text',
-        labelText: 'Username'
+class Body extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false,
+      userDetails: {
+        userName: 'Adam Smith',
+        email: 'alspdx@gmail.com'
       },
-      {
-        inputType: 'email',
-        labelText: 'Email'
-      },
-      {
-        inputType: 'password',
-        labelText: 'Password'
+      formDetails: {
+        register: {
+          inputs: [
+            {
+              inputType: 'text',
+              labelText: 'Username'
+            },
+            {
+              inputType: 'email',
+              labelText: 'Email'
+            },
+            {
+              inputType: 'password',
+              labelText: 'Password'
+            }
+          ],
+          buttonText: 'Join Formulary!',
+          buttonPath: '/signin',
+          question: 'Already have an account? ',
+          linkTo: '/signin',
+          linkText: 'Sign In here!'
+        },
+        signIn: {
+          inputs: [
+            {
+              inputType: 'email',
+              labelText: 'Email'
+            },
+            {
+              inputType: 'password',
+              labelText: 'Password'
+            }
+          ],
+          buttonText: 'Sign In!',
+          buttonPath: '/user',
+          question: 'Don\'t have an account? ',
+          linkTo: '/register',
+          linkText: 'Join Formulary!'
+        }
       }
-    ],
-    buttonText: 'Join Formulary!',
-    question: 'Already have an account? ',
-    linkTo: '/signin',
-    linkText: 'Sign In here!'
-  },
-  signIn: {
-    inputs: [
-      {
-        inputType: 'email',
-        labelText: 'Email'
-      },
-      {
-        inputType: 'password',
-        labelText: 'Password'
-      }
-    ],
-    buttonText: 'Sign In!',
-    question: 'Don\'t have an account? ',
-    linkTo: '/register',
-    linkText: 'Join Formulary!'
+    };
   }
-};
 
-const Body = () => (
-  <Container>
-    <Switch>
-      <Route exact path='/' render={() => (
-        loggedIn ? (
-          <UserProfile />
-        ) : (
-          <Redirect to='/signin' />
-        )
-      )} />
-      <Route path='/signin' render={() => <AccountForm formDetails={formDetails.signIn} />} />
-      <Route path='/register' render={() => <AccountForm formDetails={formDetails.register} />} />
-      <Route path='/clients' component={DetailsList} />
-      <Route path='/clientdetails' component={ClientDetails} />
-      <Route path='/user' component={UserProfile} />
-      <Route component={Error404} />
-    </Switch>
-  </Container>
-);
-
+  render() {
+    return (
+      <Container>
+        <Header loggedIn={this.state.loggedIn} userName={this.state.userDetails.userName} />
+        <SwitchWrap>
+          <Switch>
+            <Route exact path='/' render={() => (
+              this.state.loggedIn ? (
+                <UserProfile />
+              ) : (
+                <Redirect to='/signin' />
+              )
+            )} />
+            <Route path='/signin' render={() => <AccountForm formDetails={this.state.formDetails.signIn} />} />
+            <Route path='/register' render={() => <AccountForm formDetails={this.state.formDetails.register} />} />
+            <Route path='/clients' component={DetailsList} />
+            <Route path='/clientdetails' component={ClientDetails} />
+            <Route path='/user' render={() => <UserProfile userDetails={this.state.userDetails} />} />
+            <Route component={Error404} />
+          </Switch>
+        </SwitchWrap>
+      </Container>
+    );
+  }
+}
 export default Body;
