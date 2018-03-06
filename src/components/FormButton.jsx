@@ -16,7 +16,13 @@ const StyledButton = glamorous.button({
   transition: shadows.transition,
   ':hover': {
     boxShadow: shadows.box3,
-  }
+  },
+  ':focus': {
+    outline: 'none'
+  },
+  ':active': {
+    backgroundColor: colors.primaryLighter
+  },
 });
 
 const FormButton = ({buttonText}) => (
