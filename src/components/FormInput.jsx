@@ -21,7 +21,7 @@ const InputLabel = glamorous.label({
   top: '8px',
   transition: '0.2s ease all',
   pointerEvents: 'none',
-  '.labelSmall': {
+  '.inputActiveOrHasValue': {
     color: colors.primary,
     top: '-20',
     fontSize: '14px'
@@ -57,7 +57,7 @@ const StyledHR = glamorous.hr({
 const AnimatedHR = glamorous(StyledHR)({
   borderBottom: `3px solid ${colors.primary}`,
   transition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
-  '.hrAnimate': {
+  '.inputFocused': {
     transform: 'scaleX(0)',
   }
 });
@@ -90,14 +90,14 @@ class FormInput extends React.Component {
           onBlur={() => this.setState({isFocused: false})}
           onChange={(event) => this.handleHasValue(event)} />
         <InputLabel
-          className={(this.state.hasValue || this.state.isFocused) ? 'labelSmall' : ''}
+          className={(this.state.hasValue || this.state.isFocused) ? 'inputActiveOrHasValue' : ''}
           htmlFor={labelText}>
           {labelText}:
         </InputLabel>
         <div>
           <StyledHR />
           <AnimatedHR
-            className={this.state.isFocused ? '' : 'hrAnimate'}
+            className={this.state.isFocused ? '' : 'inputFocused'}
           />
         </div>
       </InputWrapper>

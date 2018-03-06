@@ -1,8 +1,7 @@
 import ClientDetails from './ClientDetails';
 import DetailsList from './DetailsList';
 import Error404 from './Error404';
-import SignIn from './SignIn';
-import Register from './Register';
+import AccountForm from './AccountForm';
 import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
@@ -16,11 +15,50 @@ const Container = glamorous.div({
   justifyContent: 'center'
 });
 
+const formDetails = {
+  register: {
+    inputs: [
+      {
+        inputType: 'text',
+        labelText: 'Username'
+      },
+      {
+        inputType: 'email',
+        labelText: 'Email'
+      },
+      {
+        inputType: 'password',
+        labelText: 'Password'
+      }
+    ],
+    buttonText: 'Join Formulary!',
+    question: 'Already have an account? ',
+    linkTo: '/signin',
+    linkText: 'Sign In here!'
+  },
+  signIn: {
+    inputs: [
+      {
+        inputType: 'email',
+        labelText: 'Email'
+      },
+      {
+        inputType: 'password',
+        labelText: 'Password'
+      }
+    ],
+    buttonText: 'Sign In!',
+    question: 'Don\'t have an account? ',
+    linkTo: '/register',
+    linkText: 'Join Formulary!'
+  }
+};
+
 const Body = () => (
   <Container>
     <Switch>
-      <Route exact path='/' component={SignIn} />
-      <Route path='/signup' component={Register} />
+      <Route exact path='/signin' render={() => <AccountForm formDetails={formDetails.signIn} />} />
+      <Route path='/register' render={() => <AccountForm formDetails={formDetails.register} />} />
       <Route path='/clients' component={DetailsList} />
       <Route path='/clientdetails' component={ClientDetails} />
       <Route path='/user' component={UserProfile} />
