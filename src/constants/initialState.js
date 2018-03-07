@@ -1,5 +1,5 @@
 export const initialState = {
-  // loggedIn: false,
+  loggedIn: false,
   userDetails: {
     userName: 'Adam Smith',
     email: 'alspdx@gmail.com',

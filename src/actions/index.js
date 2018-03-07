@@ -2,8 +2,6 @@ import constants from './../constants';
 const { firebaseConfig, types } = constants;
 import Firebase from 'firebase';
 
-
-// // // Firebase actions // // //
 const app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const database = app.database();
@@ -11,6 +9,8 @@ const database = app.database();
 auth.onAuthStateChanged(user => {
   console.log('this is the user', user);
 });
+
+
 
 export function createUserAccount(userName, email, password) {
   return function(dispatch) {
