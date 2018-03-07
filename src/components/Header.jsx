@@ -15,8 +15,7 @@ const StyledHeader = glamorous.header({
   justifyContent: 'space-between',
   padding: variables.headerPadding,
   height: variables.headerHeight,
-}
-);
+});
 
 const Header = ({ loggedIn, userName }) => (
   <StyledHeader>

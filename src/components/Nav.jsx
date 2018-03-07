@@ -2,43 +2,38 @@ import React from 'react';
 import NavItem from './NavItem';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { signOut } from './../actions';
 
 const StyledNav = glamorous.ul({
   display: 'flex',
   listStyle: 'none',
 });
 
-const navItems = [
-  {
-    title: 'Home',
-    pathName: '/'
-  },
-  {
-    title: 'Clients',
-    pathName: '/clients'
-  },
-  {
-    title: 'Client Details',
-    pathName: '/clientdetails'
-  }
-];
+const Nav = ({ loggedIn, userName, dispatch }) => {
+  return (
+    <div>
+      {loggedIn ? (
+        <StyledNav>
+          <NavItem title={userName} pathName={'/user'} />
+          <NavItem title='Sign Out' handleClick={() => dispatch(signOut())} />
+        </StyledNav>
+      ) : (
+        <StyledNav>
+          <NavItem title='Home' pathName={'/'} />
+          <NavItem title='Sign In' pathName={'/signin'} />
+          <NavItem title='Join Us!' pathName={'/register'} />
+        </StyledNav>
 
-const Nav = ({ loggedIn, userName }) => (
-  <StyledNav>
-    {navItems.map(item =>
-      <NavItem key={item.title} title={item.title} pathName={item.pathName} />
-    )}
-    {loggedIn ? (
-      <NavItem title={userName} pathName={'/user'} />
-    ) : (
-      <NavItem title='Sign In' pathName={'/signin'} />
-    )}
-  </StyledNav>
-);
+      )}
+    </div>
+  );
+};
 
 Nav.propTypes = {
   loggedIn: PropTypes.bool,
-  userName: PropTypes.string
+  userName: PropTypes.string,
+  dispatch: PropTypes.func
 };
 
-export default Nav;
+export default connect()(Nav);

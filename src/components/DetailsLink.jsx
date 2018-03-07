@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormButton from './FormButton';
 
-const DetailsLink = ({ detailType, item }) => {
+const DetailsLink = ({ itemType, item }) => {
   return (
     <div>
-      {detailType === 'Clients' ? (
+      {itemType === 'Clients' ? (
         <FormButton
           buttonText={`${item.firstName} ${item.lastName}`}
           buttonPath='/clientdetails'
@@ -19,7 +19,7 @@ const DetailsLink = ({ detailType, item }) => {
 };
 
 DetailsLink.propTypes = {
-  detailType: PropTypes.string,
+  itemType: PropTypes.string,
   item: PropTypes.object
 };
 

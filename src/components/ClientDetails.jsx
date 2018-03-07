@@ -6,5 +6,4 @@ const ClientDetails = () => (
   </div>
 );
 
-
 export default ClientDetails;

@@ -26,7 +26,7 @@ const SwitchWrap = glamorous.div({
 const Body = () => {
   return (
     <Container>
-      <Header />
+      <Header userName='Adam Smith' loggedIn={true} />
       <SwitchWrap>
         <Switch>
           <Route exact path='/' render={() => <Redirect to='/signin' />} />

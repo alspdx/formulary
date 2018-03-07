@@ -1,0 +1,5 @@
+__tests__
+src/actions
+src/assets
+src/constants
+src/reducers

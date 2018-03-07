@@ -24,7 +24,7 @@ const DetailsList = ({ listType, listItems }) => {
     <ListContainer>
       <ListHeading>{listType}:</ListHeading>
       {Object.keys(listItems).map(itemKey => {
-        return <DetailsLink key={itemKey} detailType={listType} item={listItems[itemKey]} />;
+        return <DetailsLink key={itemKey} itemType={listType} item={listItems[itemKey]} />;
       })}
     </ListContainer>
   );
