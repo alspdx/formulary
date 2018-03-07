@@ -22,6 +22,10 @@ describe('Formulary', () => {
     it('Should update state when user logs in.', () => {
       expect(loggedInReducer(initialState.loggedIn, { type: types.LOGGED_IN })).toEqual(true);
     });
+
+    it('Should update state when user logs out.', () => {
+      expect(loggedInReducer(initialState.loggedIn, { type: types.LOGGED_OUT })).toEqual(false);
+    })
   });
 
   describe('rootReducer', () => {
