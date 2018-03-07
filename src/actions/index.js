@@ -7,10 +7,12 @@ const auth = app.auth();
 const database = app.database();
 
 auth.onAuthStateChanged(user => {
-  console.log('this is the user', user);
+  if (user) {
+    console.log('this is the user', user);
+  } else {
+    console.log('there is no user');
+  }
 });
-
-
 
 export function createUserAccount(userName, email, password) {
   return function(dispatch) {

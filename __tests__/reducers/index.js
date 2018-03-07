@@ -20,8 +20,8 @@ describe('Formulary', () => {
     });
 
     it('Should update state when user logs in.', () => {
-      expect(loggedInReducer(initialState.loggedIn, actions.userIsLoggedIn())).toEqual(true);
-    })
+      expect(loggedInReducer(initialState.loggedIn, { type: types.LOGGED_IN })).toEqual(true);
+    });
   });
 
   describe('rootReducer', () => {
