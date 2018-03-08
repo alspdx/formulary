@@ -11,6 +11,7 @@ export const watchAuthState = () => {
   return (dispatch) => {
     auth.onAuthStateChanged(user => {
       if (user) {
+        getUserDataFromFirebase(user.uid);
         dispatch(simple.userLoggedIn());
       } else {
         dispatch(simple.userLoggedOut());
@@ -21,6 +22,7 @@ export const watchAuthState = () => {
 
 export const createUserAccount = (userName, email, password) => {
   return (dispatch) => {
+    console.log(userName, email, password);
     auth.createUserWithEmailAndPassword(email, password)
     .then(user => addUserToFirebase(userName, user))
     .catch((error) => {
@@ -31,11 +33,11 @@ export const createUserAccount = (userName, email, password) => {
 
 export const addUserToFirebase = (userName, user) => {
   const userToPush = {
-    email: userDetails.email,
-    uid: userDetails.uid,
+    uid: user.uid,
+    email: user.email,
     userName: userName
   }
-  usersRef.child(userDetails.uid).set(userToPush);
+  usersRef.child(user.uid).set(userToPush);
 }
 
 export const signInToUserAccount = (email, password) => {
@@ -48,6 +50,10 @@ export const signInToUserAccount = (email, password) => {
       console.log(error.code, error.message);
     });
   };
+}
+
+export const getUserDataFromFirebase = (userId) => {
+  app.database().ref(`users/${userId}`).once('value').then(user => console.log(user.val()));
 }
 
 export const signOut = () => {

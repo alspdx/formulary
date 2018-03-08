@@ -53,7 +53,16 @@ class Body extends React.Component {
 }
 
 Body.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  loggedIn: PropTypes.bool,
+  userDetails: PropTypes.object
 };
 
-export default withRouter(connect()(Body));
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.loggedIn,
+    userDetails: state.userDetails
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(Body));

@@ -1,8 +1,7 @@
 export const initialState = {
   loggedIn: false,
   userDetails: {
-    firstName: '',
-    lastName: '',
+    userName: '',
     email: '',
     clientIds: [],
     serviceIds: [],

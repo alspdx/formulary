@@ -7,8 +7,7 @@ const userDetailsReducer = (state = initialState.userDetails, action) => {
   switch (action.type) {
     case types.USER_DETAILS:
       newUserDetailsStateSlice = Object.assign({}, state, {
-        firstName: action.firstName,
-        lastName: action.lastName,
+        userName: action.userName,
         email: action.email,
         clientIds: action.clientIds,
         serviceIds: action.serviceIds

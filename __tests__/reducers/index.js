@@ -16,9 +16,8 @@ describe('Formulary', () => {
 
     it('Should update state with user details when user logs in.', () => {
       const newUserStateObject = {
-        firstName: 'Farrah',
-        lastName: 'Fawcett',
-        email: 'fFaucett@gmail.com',
+        userName: 'Farrah',
+        email: 'fFawcett@gmail.com',
         clientIds: [
           '3jowof90',
           'sda90fioqej4',
@@ -34,8 +33,8 @@ describe('Formulary', () => {
           'fkjeir4393'
         ],
       };
-      const { firstName, lastName, email, clientIds, serviceIds } = newUserStateObject;
-      const action = simple.addUserDetailsToState(firstName, lastName, email, clientIds, serviceIds);
+      const { userName, email, clientIds, serviceIds } = newUserStateObject;
+      const action = simple.addUserDetailsToState(userName, email, clientIds, serviceIds);
       expect(userDetailsReducer(initialState.userDetails, action)).toEqual(newUserStateObject);
     });
   });

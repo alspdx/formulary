@@ -79,7 +79,7 @@ class AccountForm extends React.Component {
 
   handleFormSubmission() {
     this.props.formType === 'register' ?
-      this.props.dispatch(createUserAccount(this.state.email, this.state.password)) :
+      this.props.dispatch(createUserAccount(this.state.username, this.state.email, this.state.password)) :
       this.props.dispatch(signInToUserAccount(this.state.email, this.state.password));
   }
 
