@@ -89,7 +89,7 @@ describe('Formulary', () => {
     it('Should update state when user selects client.', () => {
       const newClientId = '4bd91001-cdca-4559-9156-b847d6f677b0'
       expect(selectedClientIdReducer(initialState.selectedClientId, simple.setSelectedClientId(newClientId))).toEqual(newClientId);
-    })
+    });
   });
 
   describe('clientServicesReducer', () => {

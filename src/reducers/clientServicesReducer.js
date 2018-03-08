@@ -10,6 +10,8 @@ const clientServicesReducer = (state = initialState.clientServices, action) => {
         [action.serviceKey]: action.serviceDetails
       });
       return newClientServicesStateSlice;
+    case types.CLEAR_SERVICES:
+      return {};
     default:
       return state;
   };

@@ -41,3 +41,7 @@ export const setSelectedClientId = (clientId) => ({
   type: types.SET_CLIENT,
   clientId
 });
+
+export const clearClientServices = () => {
+  type: types.CLEAR_SERVICES
+}

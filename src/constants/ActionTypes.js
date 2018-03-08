@@ -7,3 +7,4 @@ export const USER_CLIENTS = 'USER_CLIENTS';
 export const CLEAR_CLIENTS = 'CLEAR_CLIENTS';
 export const SET_CLIENT = 'SET_CLIENT';
 export const CLIENT_SERVICES = 'CLIENT_SERVICES';
+export const CLEAR_SERVICES = 'CLEAR_SERVICES';

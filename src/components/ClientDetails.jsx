@@ -5,7 +5,7 @@ import glamorous from 'glamorous';
 import constants from './../constants';
 const { colors, shadows, variables } = constants;
 import { getClientServicesById } from './../actions/async';
-import DetailsList from './DetailsLink';
+import DetailsList from './DetailsList';
 
 const ClientDetailsWrapper = glamorous.div({
   display: 'flex',
@@ -38,10 +38,10 @@ const StyledLink = glamorous.a({
   }
 });
 
-const ServiceListDiv = glamorous.div({
+const ListDiv = glamorous.div({
   width: '70%',
   height: '100%',
-  boxSizing: 'borderBox',
+  boxSizing: 'borderBox'
 });
 
 class ClientDetails extends React.Component {
@@ -60,11 +60,11 @@ class ClientDetails extends React.Component {
           <StyledLink href={`mailto:${email}`}>{email}</StyledLink>
           <StyledLink href={`tel:${phone}`}>{phone}</StyledLink>
         </ClientDiv>
-        <ServiceListDiv>
+        <ListDiv>
           {this.props.clientServices &&
             <DetailsList listType='Services' listItems={this.props.clientServices} />
           }
-        </ServiceListDiv>
+        </ListDiv>
       </ClientDetailsWrapper>
     );
   }
