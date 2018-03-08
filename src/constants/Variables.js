@@ -10,5 +10,6 @@ export const inputLabelTransition = '0.2s ease all';
 export const inputMarginTop = '50px';
 export const inputWidth = '400px';
 export const liMargin = '30px';
+export const listPadding = '40px 60px';
 export const logoHeight = '200px';
 export const logoTopPosition = '20px';

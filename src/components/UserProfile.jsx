@@ -8,12 +8,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const ProfileWrapper = glamorous.div({
+  display: 'flex',
+  height: '70%',
+  width: '70%',
+  boxShadow: shadows.box1,
+  boxSizing: 'borderBox'
+});
+
+const ProfileDiv = glamorous.div({
   color: colors.black,
   backgroundColor: colors.white,
-  padding: variables.cardPadding,
-  boxShadow: shadows.box1,
+  padding: variables.listPadding,
   display: 'flex',
   flexDirection: 'column',
+  width: '30%',
+  boxSizing: 'borderBox'
 });
 
 const StyledH2 = glamorous.h2({
@@ -24,9 +33,15 @@ const StyledSpan = glamorous.span({
 
 });
 
+const ListDiv = glamorous.div({
+  width: '70%',
+  height: '100%',
+  boxSizing: 'borderBox'
+});
+
 class UserProfile extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     const { dispatch, userDetails } = this.props;
     dispatch(getUserClientsById(userDetails.clientIds));
   }
@@ -35,9 +50,15 @@ class UserProfile extends React.Component {
     const { userName, email } = this.props.userDetails;
     return (
       <ProfileWrapper>
-        <StyledH2>{userName}</StyledH2>
-        <StyledSpan>{email}</StyledSpan>
-        <DetailsList listType='Clients' itemList={this.props.userClients} />
+        <ProfileDiv>
+          <StyledH2>{userName}</StyledH2>
+          <StyledSpan>{email}</StyledSpan>
+        </ProfileDiv>
+        <ListDiv>
+          {this.props.userClients &&
+            <DetailsList listType='Clients' listItems={this.props.userClients} />
+          }
+        </ListDiv>
       </ProfileWrapper>
     );
   }

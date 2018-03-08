@@ -5,6 +5,8 @@ import rootReducer from './../../src/reducers/';
 import * as simple from './../../src/actions/simple';
 import userClientsReducer from './../../src/reducers/userClientsReducer';
 import userDetailsReducer from './../../src/reducers/userDetailsReducer';
+import selectedClientIdReducer from './../../src/reducers/selectedClientIdReducer';
+import clientServicesReducer from './../../src/reducers/clientServicesReducer';
 
 describe('Formulary', () => {
   const { types, initialState } = constants;
@@ -42,7 +44,7 @@ describe('Formulary', () => {
       const action = simple.clearUserClients();
       expect(userClientsReducer(userClientStateObject, action)).toEqual(initialState.userClients);
     })
-  })
+  });
 
   describe('userDetailsReducer', () => {
     const userStateObject = {
@@ -76,6 +78,35 @@ describe('Formulary', () => {
 
     it('Should clear user details from state when user logs out.', () => {
       expect(userDetailsReducer(userStateObject, simple.clearUserDetails())).toEqual(initialState.userDetails)
+    });
+  });
+
+  describe('selectedClientIdReducer', () => {
+    it('Should accept and return initial state.', () => {
+      expect(selectedClientIdReducer(initialState.selectedClientId, { type: null })).toEqual(initialState.selectedClientId);
+    });
+
+    it('Should update state when user selects client.', () => {
+      const newClientId = '4bd91001-cdca-4559-9156-b847d6f677b0'
+      expect(selectedClientIdReducer(initialState.selectedClientId, simple.setSelectedClientId(newClientId))).toEqual(newClientId);
+    })
+  });
+
+  describe('clientServicesReducer', () => {
+    const serviceKey = '9823ruioweaf';
+    const serviceDetails = {
+      name: 'Farrah Fawcett'
+    };
+    const serviceStateObject = {
+      [serviceKey]: serviceDetails
+    };
+
+    it('Should accept and return initial state.', () => {
+      expect(clientServicesReducer(initialState.clientServices, { type: null })).toEqual(initialState.clientServices);
+    });
+
+    it('Should update state with service details from Firebase.', () => {
+      expect(clientServicesReducer(initialState.clientServices, simple.addServiceListToState(serviceKey, serviceDetails))).toEqual(serviceStateObject);
     });
   });
 

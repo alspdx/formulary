@@ -72,6 +72,16 @@ export const getUserClientsById = (clientIds) => {
   }
 }
 
+export const getClientServicesById = (serviceIds) => {
+  return (dispatch) => {
+    serviceIds.map(serviceId => {
+      app.database().ref(`/services/${serviceId}`).once('value').then((serviceDetails) => {
+        dispatch(simple.addServiceListToState(serviceDetails.key, serviceDetails.val()));
+      });
+    });
+  }
+}
+
 export const signOut = () => {
   return () => {
     auth.signOut().then(

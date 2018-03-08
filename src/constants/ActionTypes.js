@@ -5,3 +5,5 @@ export const USER_DETAILS = 'USER_DETAILS';
 export const CLEAR_DETAILS = 'CLEAR_DETAILS';
 export const USER_CLIENTS = 'USER_CLIENTS';
 export const CLEAR_CLIENTS = 'CLEAR_CLIENTS';
+export const SET_CLIENT = 'SET_CLIENT';
+export const CLIENT_SERVICES = 'CLIENT_SERVICES';

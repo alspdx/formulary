@@ -23,10 +23,21 @@ export const addClientListToState = (clientKey, clientDetails) => ({
   clientDetails
 });
 
+export const addServiceListToState = (serviceKey, serviceDetails) => ({
+  type: types.CLIENT_SERVICES,
+  serviceKey,
+  serviceDetails
+});
+
 export const clearUserDetails = () => ({
   type: types.CLEAR_DETAILS
 });
 
 export const clearUserClients = () => ({
   type: types.CLEAR_CLIENTS
-})
+});
+
+export const setSelectedClientId = (clientId) => ({
+  type: types.SET_CLIENT,
+  clientId
+});

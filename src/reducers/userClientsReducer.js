@@ -11,7 +11,7 @@ const userClientsReducer = (state = initialState.userClients, action) => {
       });
       return newUserClientsStateSlice;
     case types.CLEAR_CLIENTS:
-      return [];
+      return {};
     default:
       return state;
   }

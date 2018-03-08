@@ -1,10 +1,12 @@
 export const initialState = {
   loggedIn: false,
-  userClients: [],
+  userClients: {},
   userDetails: {
     userName: '',
     email: '',
     clientIds: [],
     serviceIds: [],
   },
+  selectedClientId: '',
+  clientServices: {}
 };

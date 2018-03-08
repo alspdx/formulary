@@ -3,20 +3,23 @@ import DetailsLink from './DetailsLink';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import constants from './../constants';
-const { colors, shadows, variables } = constants;
+const { colors, variables } = constants;
 
 const ListHeading = glamorous.h2({
-  color: colors.primary
+  color: colors.primary,
+  alignSelf: 'flex-start',
 });
 
 const ListContainer = glamorous.div({
-  padding: variables.cardPadding,
+  padding: variables.listPadding,
   color: colors.black,
   backgroundColor: colors.white,
-  boxShadow: shadows.box1,
   boxSizing: 'border-box',
-  maxHeight: '70%',
-  overflow: 'scroll'
+  height: '100%',
+  overflow: 'scroll',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 });
 
 const DetailsList = ({ listType, listItems }) => {
@@ -24,7 +27,12 @@ const DetailsList = ({ listType, listItems }) => {
     <ListContainer>
       <ListHeading>{listType}:</ListHeading>
       {Object.keys(listItems).map(itemKey => {
-        return <DetailsLink />;
+        return <DetailsLink
+          item={listItems[itemKey]}
+          itemType={listType}
+          key={itemKey}
+          itemKey={itemKey}
+        />;
       })}
     </ListContainer>
   );
