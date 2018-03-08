@@ -27,6 +27,7 @@ const SwitchWrap = glamorous.div({
 });
 
 class Body extends React.Component {
+
   componentWillMount() {
     const { dispatch } = this.props;
     dispatch(watchAuthState());

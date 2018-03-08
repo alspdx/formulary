@@ -11,10 +11,11 @@ export const watchAuthState = () => {
   return (dispatch) => {
     auth.onAuthStateChanged(user => {
       if (user) {
-        getUserDataFromFirebase(user.uid);
         dispatch(simple.userLoggedIn());
+        getUserDataFromFirebase(user.uid, dispatch);
       } else {
         dispatch(simple.userLoggedOut());
+        dispatch(simple.clearUserDetails());
       }
     });
   };
@@ -43,8 +44,8 @@ export const addUserToFirebase = (userName, user) => {
 export const signInToUserAccount = (email, password) => {
   return (dispatch) => {
     auth.signInWithEmailAndPassword(email, password)
-    .then(user => console.log(user))
-    .catch((error) => {
+    .then(user => getUserDataFromFirebase(user.uid, dispatch))
+    .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(error.code, error.message);
@@ -52,8 +53,11 @@ export const signInToUserAccount = (email, password) => {
   };
 }
 
-export const getUserDataFromFirebase = (userId) => {
-  app.database().ref(`users/${userId}`).once('value').then(user => console.log(user.val()));
+export const getUserDataFromFirebase = (userId, dispatch) => {
+  app.database().ref(`/users/${userId}`).once('value').then((userDetails) => {
+    const { userName, email, clientIds, serviceIds } = userDetails.val();
+    dispatch(simple.addUserDetailsToState(userName, email, clientIds, serviceIds));
+  });
 }
 
 export const signOut = () => {

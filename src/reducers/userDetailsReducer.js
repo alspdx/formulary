@@ -13,6 +13,14 @@ const userDetailsReducer = (state = initialState.userDetails, action) => {
         serviceIds: action.serviceIds
       });
       return newUserDetailsStateSlice;
+    case types.CLEAR_DETAILS:
+      newUserDetailsStateSlice = Object.assign({}, state, {
+        userName: '',
+        email: '',
+        clientIds: [],
+        serviceIds: []
+      });
+      return newUserDetailsStateSlice;
     default:
       return state;
   }

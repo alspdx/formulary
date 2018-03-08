@@ -16,3 +16,7 @@ export const addUserDetailsToState = (userName, email, clientIds, serviceIds) =>
   clientIds,
   serviceIds
 });
+
+export const clearUserDetails = () => ({
+  type: types.CLEAR_DETAILS
+});
