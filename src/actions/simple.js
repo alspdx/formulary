@@ -8,3 +8,12 @@ export const userLoggedIn = () => ({
 export const userLoggedOut = () => ({
   type: types.LOGGED_OUT
 });
+
+export const addUserDetailsToState = (firstName, lastName, email, clientIds, serviceIds) => ({
+  type: types.USER_DETAILS,
+  firstName,
+  lastName,
+  email,
+  clientIds,
+  serviceIds
+});

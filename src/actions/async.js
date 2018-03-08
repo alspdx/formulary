@@ -5,7 +5,7 @@ import * as simple from './simple';
 
 const app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
-const database = app.database();
+const usersRef = app.database().ref('users');
 
 export const watchAuthState = () => {
   return (dispatch) => {
@@ -19,23 +19,33 @@ export const watchAuthState = () => {
   };
 }
 
-export const createUserAccount = (email, password) => {
-  return () => {
+export const createUserAccount = (userName, email, password) => {
+  return (dispatch) => {
     auth.createUserWithEmailAndPassword(email, password)
-    .catch(function(error) {
+    .then(user => addUserToFirebase(userName, user))
+    .catch((error) => {
       console.log(error);
     });
   };
 }
 
+export const addUserToFirebase = (userName, user) => {
+  const userToPush = {
+    email: userDetails.email,
+    uid: userDetails.uid,
+    userName: userName
+  }
+  usersRef.child(userDetails.uid).set(userToPush);
+}
+
 export const signInToUserAccount = (email, password) => {
-  return () => {
+  return (dispatch) => {
     auth.signInWithEmailAndPassword(email, password)
-    .then(
-      console.log('signed in?')
-    ).catch(function(error) {
+    .then(user => console.log(user))
+    .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(error.code, error.message);
     });
   };
 }
@@ -44,7 +54,7 @@ export const signOut = () => {
   return () => {
     auth.signOut().then(
       console.log('signedOut')
-    ).catch(function(error) {
+    ).catch((error) => {
       console.log(error)
     });
   };

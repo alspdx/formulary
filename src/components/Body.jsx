@@ -1,7 +1,7 @@
+import AccountForm from './AccountForm';
 import ClientDetails from './ClientDetails';
 import DetailsList from './DetailsList';
 import Error404 from './Error404';
-import AccountForm from './AccountForm';
 import React from 'react';
 import UserProfile from './UserProfile';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
