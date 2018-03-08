@@ -3,7 +3,7 @@ import NavItem from './NavItem';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { signOut } from './../actions';
+import { signOut } from './../actions/async';
 
 const StyledNav = glamorous.ul({
   display: 'flex',
@@ -24,7 +24,6 @@ const Nav = ({ loggedIn, userName, dispatch }) => {
           <NavItem title='Sign In' pathName={'/signin'} />
           <NavItem title='Join Us!' pathName={'/register'} />
         </StyledNav>
-
       )}
     </div>
   );
@@ -36,4 +35,10 @@ Nav.propTypes = {
   dispatch: PropTypes.func
 };
 
-export default connect()(Nav);
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.loggedIn
+  };
+};
+
+export default connect(mapStateToProps)(Nav);

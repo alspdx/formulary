@@ -17,15 +17,14 @@ const StyledHeader = glamorous.header({
   height: variables.headerHeight,
 });
 
-const Header = ({ loggedIn, userName }) => (
+const Header = ({ userName }) => (
   <StyledHeader>
     <HeaderLogo />
-    <Nav loggedIn={loggedIn} userName={userName} />
+    <Nav userName={userName} />
   </StyledHeader>
 );
 
 Header.propTypes = {
-  loggedIn: PropTypes.bool,
   userName: PropTypes.string
 };
 

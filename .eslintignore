@@ -2,4 +2,5 @@ __tests__
 src/actions
 src/assets
 src/constants
+src/middleware
 src/reducers

@@ -12,11 +12,12 @@ const ResetDiv = glamorous.div({
   backgroundColor: colors.primary,
 });
 
-const App = () => (
-  <ResetDiv>
-    <Body />
-  </ResetDiv>
-);
-
+const App = () => {
+  return (
+    <ResetDiv>
+      <Body />
+    </ResetDiv>
+  );
+};
 
 export default App;

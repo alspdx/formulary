@@ -3,6 +3,7 @@ import userDetailsReducer from './../../src/reducers/userDetailsReducer';
 import loggedInReducer from './../../src/reducers/loggedInReducer';
 import rootReducer from './../../src/reducers/';
 import { createStore } from 'redux';
+import * as simple from './../../src/actions/simple'
 
 describe('Formulary', () => {
   const { types, initialState } = constants;
@@ -20,11 +21,11 @@ describe('Formulary', () => {
     });
 
     it('Should update state when user logs in.', () => {
-      expect(loggedInReducer(initialState.loggedIn, { type: types.LOGGED_IN })).toEqual(true);
+      expect(loggedInReducer(initialState.loggedIn, simple.userLoggedIn())).toEqual(true);
     });
 
     it('Should update state when user logs out.', () => {
-      expect(loggedInReducer(initialState.loggedIn, { type: types.LOGGED_OUT })).toEqual(false);
+      expect(loggedInReducer(initialState.loggedIn, simple.userLoggedOut())).toEqual(false);
     })
   });
 

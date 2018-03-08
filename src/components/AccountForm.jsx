@@ -6,7 +6,7 @@ import constants from './../constants';
 const { colors, shadows, variables } = constants;
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { createUserAccount, signInToUserAccount } from './../actions';
+import { createUserAccount, signInToUserAccount } from './../actions/async';
 import { connect } from 'react-redux';
 
 const FormWrapper = glamorous.div({
@@ -79,7 +79,7 @@ class AccountForm extends React.Component {
 
   handleFormSubmission() {
     this.props.formType === 'register' ?
-      this.props.dispatch(createUserAccount(this.state.userName, this.state.email, this.state.password)) :
+      this.props.dispatch(createUserAccount(this.state.email, this.state.password)) :
       this.props.dispatch(signInToUserAccount(this.state.email, this.state.password));
   }
 
