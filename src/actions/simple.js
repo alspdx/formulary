@@ -17,6 +17,16 @@ export const addUserDetailsToState = (userName, email, clientIds, serviceIds) =>
   serviceIds
 });
 
+export const addClientListToState = (clientKey, clientDetails) => ({
+  type: types.USER_CLIENTS,
+  clientKey,
+  clientDetails
+});
+
 export const clearUserDetails = () => ({
   type: types.CLEAR_DETAILS
 });
+
+export const clearUserClients = () => ({
+  type: types.CLEAR_CLIENTS
+})

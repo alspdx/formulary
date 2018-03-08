@@ -1,9 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
-import constants from './../constants';
-import FormButton from './FormButton';
 const { colors, variables, shadows } = constants;
+import { connect } from 'react-redux';
+import constants from './../constants';
+import DetailsList from './DetailsList';
+import { getUserClientsById } from './../actions/async';
+import glamorous from 'glamorous';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const ProfileWrapper = glamorous.div({
   color: colors.black,
@@ -22,20 +24,37 @@ const StyledSpan = glamorous.span({
 
 });
 
-const UserProfile = ({ userDetails }) => {
-  const { userName, email, clientIds } = userDetails;
-  return (
-    <ProfileWrapper>
-      <StyledH2>{userName}</StyledH2>
-      <StyledSpan>{email}</StyledSpan>
-      <FormButton buttonText={`Clients (${clientIds.length})`} buttonPath='/clients' />
-    </ProfileWrapper>
-  );
-};
+class UserProfile extends React.Component {
+
+  componentDidMount() {
+    const { dispatch, userDetails } = this.props;
+    dispatch(getUserClientsById(userDetails.clientIds));
+  }
+
+  render() {
+    const { userName, email } = this.props.userDetails;
+    return (
+      <ProfileWrapper>
+        <StyledH2>{userName}</StyledH2>
+        <StyledSpan>{email}</StyledSpan>
+        <DetailsList listType='Clients' itemList={this.props.userClients} />
+      </ProfileWrapper>
+    );
+  }
+}
 
 
 UserProfile.propTypes = {
-  userDetails: PropTypes.object
+  dispatch: PropTypes.func,
+  userDetails: PropTypes.object,
+  userClients: PropTypes.object
 };
 
-export default UserProfile;
+const mapStateToProps = state => {
+  return {
+    userDetails: state.userDetails,
+    userClients: state.userClients
+  };
+};
+
+export default connect(mapStateToProps)(UserProfile);

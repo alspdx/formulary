@@ -1,13 +1,48 @@
 import constants from './../../src/constants';
-import userDetailsReducer from './../../src/reducers/userDetailsReducer';
+import { createStore } from 'redux';
 import loggedInReducer from './../../src/reducers/loggedInReducer';
 import rootReducer from './../../src/reducers/';
-import { createStore } from 'redux';
 import * as simple from './../../src/actions/simple';
+import userClientsReducer from './../../src/reducers/userClientsReducer';
+import userDetailsReducer from './../../src/reducers/userDetailsReducer';
 
 describe('Formulary', () => {
   const { types, initialState } = constants;
   const store = createStore(rootReducer);
+
+  describe('userClientsReducer', () => {
+    const clientKey = '943058eriogjfndsv';
+    const clientDetails = {
+      firstName: 'Farrah',
+      lastName: 'Fawcett',
+      email: 'fFawcett@gmail.com',
+      phone: '123-456-7890',
+      serviceIds: [
+        '203oewik',
+        'pwqoeiru93',
+        '7584eiruj',
+        'kd29jaf2w',
+        'fkjeir4393'
+      ],
+      stylistId: '3490ieworjdfs'
+    };
+    const userClientStateObject = {
+      [clientKey]: clientDetails
+    };
+    it('Should accept and return initial state.', () => {
+      expect(userClientsReducer(initialState.userClients, { type: null })).toEqual(initialState.userClients);
+    });
+
+    it('Should update state with client details from Firebase.', () => {
+      const action = simple.addClientListToState(clientKey, clientDetails);
+      expect(userClientsReducer(initialState.userClients, action)).toEqual(userClientStateObject);
+    });
+
+    it('Should clear client details from state when user logs out.', () => {
+      const action = simple.clearUserClients();
+      expect(userClientsReducer(userClientStateObject, action)).toEqual(initialState.userClients);
+    })
+  })
 
   describe('userDetailsReducer', () => {
     const userStateObject = {

@@ -12,10 +12,11 @@ export const watchAuthState = () => {
     auth.onAuthStateChanged(user => {
       if (user) {
         dispatch(simple.userLoggedIn());
-        getUserDataFromFirebase(user.uid, dispatch);
+        getUserDataById(user.uid, dispatch);
       } else {
         dispatch(simple.userLoggedOut());
         dispatch(simple.clearUserDetails());
+        dispatch(simple.clearUserClients());
       }
     });
   };
@@ -44,7 +45,7 @@ export const addUserToFirebase = (userName, user) => {
 export const signInToUserAccount = (email, password) => {
   return (dispatch) => {
     auth.signInWithEmailAndPassword(email, password)
-    .then(user => getUserDataFromFirebase(user.uid, dispatch))
+    .then(user => getUserDataById(user.uid, dispatch))
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -53,11 +54,22 @@ export const signInToUserAccount = (email, password) => {
   };
 }
 
-export const getUserDataFromFirebase = (userId, dispatch) => {
+export const getUserDataById = (userId, dispatch) => {
   app.database().ref(`/users/${userId}`).once('value').then((userDetails) => {
     const { userName, email, clientIds, serviceIds } = userDetails.val();
     dispatch(simple.addUserDetailsToState(userName, email, clientIds, serviceIds));
+    // dispatch(getUserClientsById(clientIds, dispatch))
   });
+}
+
+export const getUserClientsById = (clientIds) => {
+  return (dispatch) => {
+    clientIds.map(clientId => {
+      app.database().ref(`/clients/${clientId}`).once('value').then((clientDetails) => {
+        dispatch(simple.addClientListToState(clientDetails.key, clientDetails.val()));
+      });
+    });
+  }
 }
 
 export const signOut = () => {

@@ -1,9 +1,8 @@
-import React from 'react';
-import Nav from './Nav';
-import HeaderLogo from './HeaderLogo';
-import glamorous from 'glamorous';
-import PropTypes from 'prop-types';
 import constants from './../constants';
+import glamorous from 'glamorous';
+import HeaderLogo from './HeaderLogo';
+import Nav from './Nav';
+import React from 'react';
 const { variables } = constants;
 
 
@@ -17,15 +16,11 @@ const StyledHeader = glamorous.header({
   height: variables.headerHeight,
 });
 
-const Header = ({ userName }) => (
+const Header = () => (
   <StyledHeader>
     <HeaderLogo />
-    <Nav userName={userName} />
+    <Nav />
   </StyledHeader>
 );
-
-Header.propTypes = {
-  userName: PropTypes.string
-};
 
 export default Header;

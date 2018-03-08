@@ -1,8 +1,8 @@
-import React from 'react';
-import NavItem from './NavItem';
 import glamorous from 'glamorous';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import NavItem from './NavItem';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { signOut } from './../actions/async';
 
 const StyledNav = glamorous.ul({
@@ -10,12 +10,12 @@ const StyledNav = glamorous.ul({
   listStyle: 'none',
 });
 
-const Nav = ({ loggedIn, userName, dispatch }) => {
+const Nav = ({ dispatch, loggedIn, userDetails }) => {
   return (
     <div>
       {loggedIn ? (
         <StyledNav>
-          <NavItem title={userName} pathName={'/user'} />
+          <NavItem title={userDetails.userName} pathName={'/user'} />
           <NavItem title='Sign Out' handleClick={() => dispatch(signOut())} />
         </StyledNav>
       ) : (
@@ -30,14 +30,15 @@ const Nav = ({ loggedIn, userName, dispatch }) => {
 };
 
 Nav.propTypes = {
+  dispatch: PropTypes.func,
   loggedIn: PropTypes.bool,
-  userName: PropTypes.string,
-  dispatch: PropTypes.func
+  userDetails: PropTypes.object,
 };
 
 const mapStateToProps = state => {
   return {
-    loggedIn: state.loggedIn
+    loggedIn: state.loggedIn,
+    userDetails: state.userDetails,
   };
 };
 

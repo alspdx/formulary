@@ -36,7 +36,7 @@ class Body extends React.Component {
   render() {
     return (
       <Container>
-        <Header userName='Adam Smith' />
+        <Header />
         <SwitchWrap>
           <Switch>
             <Route exact path='/' render={() => <Redirect to='/signin' />} />
